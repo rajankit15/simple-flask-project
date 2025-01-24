@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Code Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Access Code</h2>
+        <form action="{{ url_for('verify') }}" method="post" id="codeForm">
+            <div class="code-inputs">
+                <input type="text" maxlength="1" required oninput="moveNext(this, 'code2')" id="code1">
+                <input type="text" maxlength="1" required oninput="moveNext(this, 'code3')" id="code2">
+                <input type="text" maxlength="1" required oninput="moveNext(this, 'code4')" id="code3">
+                <input type="text" maxlength="1" required oninput="moveNext(this, 'code5')" id="code4">
+                <input type="text" maxlength="1" required oninput="moveNext(this, 'code6')" id="code5">
+                <input type="text" maxlength="1" required id="code6">
+            </div>
+            <input type="hidden" name="code" id="fullCode">
+            <button type="submit" onclick="combineCode()">Submit</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
