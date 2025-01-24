@@ -34,6 +34,7 @@ def stream():
             "format": "best",  
             "noplaylist": True,
             "quiet": True,
+            "cookies": "cookies.json",
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(youtube_url, download=False)
