@@ -46,6 +46,7 @@ def stream():
         video_stream_url = get_video_stream()
         return redirect(video_stream_url)  
     except Exception as e:
+        print(f"Error: {str(e)}")
         return f"Error: {str(e)}", 500
 
 
