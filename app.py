@@ -27,7 +27,7 @@ def video():
 
 @app.route("/stream")
 def stream():
-    youtube_url = "https://www.youtube.com/watch?v=tLn0bq2mbVU"
+    youtube_url = "https://www.youtube.com/watch?v=gkD7TbavRwA"
 
     def get_video_stream():
         ydl_opts = {
